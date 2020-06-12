@@ -8,4 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Problwma1Angular';
   name = 'Martin';
+
+  onSaludar(mensaje){
+    console.log(mensaje);
+  }
 }
