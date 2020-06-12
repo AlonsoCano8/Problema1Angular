@@ -9,7 +9,7 @@ import {Component, Input} from '@angular/core';
 )
 
 export class SaludarComponent{
-    @Input() nombre:string;
+    @Input() nombre:string = "Yaneli";
     constructor(){}
 
 }
