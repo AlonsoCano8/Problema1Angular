@@ -4,6 +4,12 @@
 <input type="text" name="" id="">
 <p>Soy un Parrafo </p>
 
+<p>
+    <input type="text" [value] = "nombreLista">
+    <br>
+    <button (click)="onButtonClick()">Añadir nombre</button>
+</p>
+
 <p (click)="onClick()">
     Hola {{nombre}}
 </p>
