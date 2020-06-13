@@ -4,11 +4,11 @@
 <input type="text" name="" id="">
 <p>Soy un Parrafo </p>
 
-<p>
-    <input type="text" [value] = "nombreLista">
+<div>
+    <input type="text" #lista>
     <br>
-    <button (click)="onButtonClick()">Añadir nombre</button>
-</p>
+    <button (click)="onButtonClick(lista.value)">Añadir nombre</button>
+</div>
 
 <p (click)="onClick()">
     Hola {{nombre}}

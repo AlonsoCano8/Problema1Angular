@@ -21,9 +21,9 @@ export class SaludarComponent{
         this.saludar.emit('¡Hola desde el componente hijo!');
     }
 
-    onButtonClick(){
-        this.nombres.push(this.nombreLista);
-        this.nombreLista = '';
+    onButtonClick(lista){
+        this.nombres.push(lista);
+        lista = '';
         console.log(this.nombres);
    }
 }
