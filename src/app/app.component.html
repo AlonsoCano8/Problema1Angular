@@ -1,1 +1,9 @@
-<saludar-app [nombre]="name" (saludar)="onSaludar($event)"></saludar-app>   
+<div>
+    <h1>
+        Componente app.component.html
+    </h1>
+    <p>
+        Escribiendo: <strong>{{micomSaludar.nombreLista}}</strong>
+    </p>
+</div>
+<saludar-app #micomSaludar [nombre]="name" (saludar)="onSaludar($event)"></saludar-app>   

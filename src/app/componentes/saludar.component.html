@@ -5,9 +5,9 @@
 <p>Soy un Parrafo </p>
 
 <div>
-    <input type="text" #lista>
+    <input type="text" [(ngModel)]="nombreLista">
     <br>
-    <button (click)="onButtonClick(lista.value)">Añadir nombre</button>
+    <button (click)="onButtonClick()">Añadir nombre</button>
 </div>
 
 <p (click)="onClick()">
