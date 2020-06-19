@@ -1,9 +1,11 @@
 <div>
-    <h1>
+    <h1 
+    [style.font-size.em]="micomSaludar.nombreLista.length > 0 ? '3' : '1' "
+    [style.color]="micomSaludar.nombreLista.length > 0 ? 'blue' : 'black' ">
         Componente app.component.html
     </h1>
-    <p>
+    <p [class.invisible]="micomSaludar.nombreLista.length == 0">
         Escribiendo: <strong>{{micomSaludar.nombreLista}}</strong>
     </p>
 </div>
-<saludar-app #micomSaludar [nombre]="name" (saludar)="onSaludar($event)"></saludar-app>   
+<saludar-app #micomSaludar [nombre]="name" (saludar)="onSaludar($event)"></saludar-app>  
