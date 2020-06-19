@@ -3,16 +3,21 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { SaludarComponent } from './componentes/saludar.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormComponent } from './componentes/form/form.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    SaludarComponent
+    SaludarComponent,
+    FormComponent,
+  
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
