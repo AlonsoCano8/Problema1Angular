@@ -13,7 +13,7 @@ export class SaludarComponent{
     @Output() saludar: EventEmitter<string> = new EventEmitter<string>();
 
     public nombres: Array<string>= [];
-    public nombreLista:string = "Ariana";
+    public nombreLista:string = "";
     
     constructor(){}
 
