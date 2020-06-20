@@ -1,0 +1,63 @@
+<div class="container">
+    <form [formGroup]="addFormulario" (ngSubmit)="add(addFormulario.value)">
+        <div class="form-row">
+            <div class="col-md-6 mb-3">
+                <label >ID:</label>
+                <input formControlName="id" type="text" class="form-control" maxlength="5" >
+                <div class="not" *ngIf="addFormulario.get('id').hasError('required') && addFormulario.get('id').touched">
+                    ¡Este campo es requerido, introduzca su ID! Valido de 100-105
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label >Nombre:</label>
+                <input formControlName="nombre" type="text" class="form-control" maxlength="30" >
+                <div class="not" *ngIf="addFormulario.get('nombre').hasError('required') && addFormulario.get('nombre').touched">
+                    ¡Este campo es requerido, introduzca su Nombre!
+                </div>
+            </div>
+        </div>
+        <div class="form-rpw">
+            <div class="col-md-6 mb-3">
+                <legend class="col-form-label col-sm-2 pt-0">Genero</legend>
+                    <div class="col-sm-10">
+                        <div class="form-check">
+                        <input formControlName="gen"  class="form-check-input" type="radio" value="M">
+                        <label  class="form-check-label" for="gridRadios1">
+                            Masculino
+                        </label>
+                        </div>
+                        <div class="form-check">
+                        <input formControlName="gen" class="form-check-input" type="radio" value="F" >
+                        <label  class="form-check-label" for="gridRadios2">
+                            Femenino
+                        </label>
+                        </div>
+                        <div class="not"  *ngIf=" addFormulario.get('gen').hasError('required')" >
+                            ¡Este campo es requerido, seleccione su Genero!
+                        </div>
+                    </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label >Año de nacimiento</label>
+                <input formControlName="year" type="number" class="form-control" maxlength="4" >
+                <div class="not" *ngIf="addFormulario.get('year').hasError('required') && addFormulario.get('year').touched">
+                    ¡Este campo es requerido, introduzca su Año de nacimiento! Valido de 1980-2010
+                </div>
+            </div>
+        </div>
+        <button [disabled]="addFormulario.invalid" type="submit" class="btn btn-primary">Guardar</button>
+    
+    </form>
+</div>
+<div class="container" *ngIf="info.length>0">
+    <br>
+    <div class="card" style="width: 18rem;" *ngFor="let item of info">
+        <div class="card-body">
+          <h5 class="card-title">Bienvenido(a) {{item.nombre}}</h5>
+          <p class="card-text">ID: {{item.id}} </p>
+          <p class="card-text">Genero: {{item.gen}} </p>
+          <p class="card-text">Año de Nacimiento: {{item.year}}</p>
+        </div>
+        <br>
+      </div>
+</div>
