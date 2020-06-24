@@ -6,6 +6,8 @@ import { SaludarComponent } from './componentes/saludar.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { FormComponent } from './componentes/form/form.component';
 import { AddAppComponent } from './componentes/add-app/add-app.component';
+import { PasswordStrengthComponent } from './componentes/form/password-strength/password-strength.component';
+
 
 @NgModule({
   declarations: [
@@ -13,6 +15,7 @@ import { AddAppComponent } from './componentes/add-app/add-app.component';
     SaludarComponent,
     FormComponent,
     AddAppComponent,
+    PasswordStrengthComponent,
   
   ],
   imports: [

@@ -1,3 +1,15 @@
 .invisible{
     visibility: hidden;
 }
+
+.weak{
+    color: red;
+}
+
+.medium{
+    color: yellow;
+}
+
+.strong{
+    color: green;
+}

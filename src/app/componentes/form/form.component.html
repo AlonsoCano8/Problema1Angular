@@ -1,3 +1,4 @@
+<!--
 <div class="container">
     <h1>Validar Formulario</h1>
     <form [formGroup]="logFrml" (ngSubmit)="enviar(logFrml.value)">
@@ -8,28 +9,36 @@
                 <div class="not" *ngIf="logFrml.get('nombre').hasError('required') && logFrml.get('nombre').touched">
                     ¡Este campo es requerido, introduzca su nombre!</div>
             </div>
+
+            <div class="form-group col-md-6 mb-6">
+                <label>Password</label>
+                <input formControlName="password" type="password" class="form-control">            
+                <div class="not"  *ngIf="logFrml.get('password').hasError('required') && logFrml.get('password').touched">
+                    ¡Este campo es requerido, introduzca su contraseña!</div>
+            </div>
+        </div>
+
+        <div class="form-row" class="padre">
             <div class="form-group col-md-6">
                 <label>Email</label>
                 <input formControlName="email" type="email" class="form-control" placeholder="ejemplo@">
                 <div class="not" *ngIf="logFrml.get('email').hasError('email') && logFrml.get('email').hasError('required') && logFrml.get('email').touched">
                     ¡Este campo es requerido, introduzca su email!</div>
             </div>
-        </div>
-        <div class="form-row" class="padre">
             <div class="form-group col-md-6">
                 <label for="inputAddress">Dirección</label>
                 <input formControlName="direccion" type="text" class="form-control" placeholder="1234 Main St" maxlength="200">
                 <div class="not" *ngIf="logFrml.get('direccion').hasError('required') && logFrml.get('direccion').touched">
                     ¡Este campo es requerido, introduzca su direccion!</div>
             </div>
+        </div>
+        <div class="form-row" class="padre">
             <div class="form-group col-md-6">
                 <label for="inputCity">Ciudad</label>
                 <input formControlName="ciudad" type="text" class="form-control" maxlength="70">
                 <div class="not" *ngIf="logFrml.get('ciudad').hasError('required') && logFrml.get('ciudad').touched">
                     ¡Este campo es requerido, introduzca su ciudad!</div>
             </div>
-        </div>
-        <div class="form-row" class="padre">
             <div class="form-group col-md-6">
                 <label for="inputState">Estado</label>
                 <select formControlName="estado" class="form-control">
@@ -43,13 +52,35 @@
                 <div class="not" *ngIf="logFrml.get('estado').hasError('required') && logFrml.get('estado').touched">
                     ¡Este campo es requerido, seleccione su estado!</div>
             </div>
-            <div class="form-group col-md-6">
+        </div>
+            <div class="form-row" class="hijo">
+            <div class="form-group col-md-4">
                 <label for="inputZip">Codigo Postal</label>
                 <input formControlName="postal" type="number" class="form-control" maxlength="6">
                 <div class="not" *ngIf="logFrml.get('postal').hasError('required') && logFrml.get('postal').touched">
                     ¡Este campo es requerido, introduzca su postal!</div>
             </div>
-        </div>
+            </div>
         <button [disabled]="logFrml.invalid" class="btn btn-primary" type="submit">Registrar</button>
     </form>
 </div>
+  -->
+
+<div class="container">
+    <div class="row">
+        <div class="col mt-5 col-xs-6 col-md-6 col-lg-6">
+          <h2>Validar Contraseña</h2>
+          <br>
+        <form [formGroup]="logFrml">
+          <div class="form-group">
+            <input formControlName="password" type="password" class="form-control" autocomplete="off" placeholder="Password">
+            <app-password-strength [passwordToCheck]="logFrml.value.password"
+            (passwordStrength)="passwordValid($event)"></app-password-strength>
+        </div>
+          <button type="submit" class="btn btn-primary" [disabled]="!passwordIsValid">
+            Enviar
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>

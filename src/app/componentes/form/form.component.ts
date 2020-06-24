@@ -10,6 +10,7 @@ export class FormComponent implements OnInit {
   constructor(private _builder: FormBuilder) { 
     this.logFrml=this._builder.group({
       nombre: ['', Validators.required],
+      password:['', Validators.required],
       email: ['', Validators.compose([Validators.email, Validators.required])],
       direccion: ['', Validators.required],
       ciudad: ['', Validators.required],
@@ -19,11 +20,24 @@ export class FormComponent implements OnInit {
     })
   }
   logFrml: FormGroup
-  
+  passwordIsValid = false;
 
   ngOnInit(): void {
+    this.logFrml = this._builder.group({
+      password: ['', Validators.required]
+  });
   }
+
   enviar(values){
     console.log(values);
   }
+
+  passwordValid(event) {
+    this.passwordIsValid = event;
+  }
+
 }
+
+
+
+
