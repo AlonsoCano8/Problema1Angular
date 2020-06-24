@@ -73,7 +73,7 @@
           <br>
         <form [formGroup]="logFrml">
           <div class="form-group">
-            <input formControlName="password" type="password" class="form-control" autocomplete="off" placeholder="Password">
+            <input formControlName="password" type="password" class="form-control" autocomplete="off" placeholder="*****">
             <app-password-strength [passwordToCheck]="logFrml.value.password"
             (passwordStrength)="passwordValid($event)"></app-password-strength>
         </div>
